@@ -10,6 +10,10 @@ function App(props) {
 
   const onSubmit = () => {
 
+    const url = `http://localhost:3000/sql?query=${query}`
+    setTableData([])
+    fetch(url).then(res => res.json()).then(data => setTableData(data))
+
   }
 
   const onChange = () => {
@@ -20,8 +24,8 @@ function App(props) {
 
   return (
     <div className="App">
-       <Search />
-       <Result />
+       <Search onSubmit={onSubmit} onChange={onChange} />
+       <Result tableData={tableData} />
     </div>
   );
 }
