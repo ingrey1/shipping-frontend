@@ -1,10 +1,16 @@
 import React from 'react'
 
 
-function Search(props) {
+const containerStyles = {
+    width: 400,
+    height: 400
+}
 
-    return <div>
-        
+function Search({query, onChange, onSubmit}) {
+
+    return <div style={containerStyles}>
+        <textarea value={query} onChange={onChange} />
+        <button onClick={onSubmit}>Submit Query</button>
     </div>
 
 }
