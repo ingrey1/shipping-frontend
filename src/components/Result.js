@@ -18,7 +18,7 @@ function Result({data}) {
 
         </tr>
 
-        {data.map(row => {
+        {data.map((row, index) => {
             return <tr>
                {Object.values(row).map(col => {
                   return <td>{col}</td>
